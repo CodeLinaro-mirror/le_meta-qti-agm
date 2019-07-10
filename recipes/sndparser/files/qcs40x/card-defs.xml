@@ -60,8 +60,8 @@
             <so-name>libagm_pcm_plugin.so</so-name>
         </pcm_plugin>
         <props>
-            <playback>0</playback>
-            <capture>1</capture>
+            <playback>1</playback>
+            <capture>0</capture>
             <hostless>1</hostless>
         </props>
     </pcm-device>
