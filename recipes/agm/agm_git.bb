@@ -13,5 +13,7 @@ S = "${WORKDIR}/vendor/qcom/opensource/agm/service"
 PR = "r0"
 
 DEPENDS = "tinyalsa gsl platform-headers"
+
+EXTRA_OECONF += "--with-glib"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
