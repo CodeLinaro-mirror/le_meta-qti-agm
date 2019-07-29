@@ -18,6 +18,7 @@ do_install_append() {
 }
 
 PR = "r0"
-DEPENDS = "libcutils expat"
+DEPENDS = "libcutils expat glib-2.0"
+EXTRA_OECONF += "--with-glib"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
