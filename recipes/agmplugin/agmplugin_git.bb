@@ -11,7 +11,9 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/"
 PR = "r0"
-DEPENDS = "tinyalsa agm-client sndparser"
+DEPENDS = "tinyalsa tinycompress agm-client sndparser"
+
+EXTRA_OEMAKE = "DEFAULT_INCLUDES=-I${STAGING_KERNEL_BUILDDIR}/usr/include"
 
 FILES_${PN}-dbg  = "${libdir}/.debug/*"
 FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
