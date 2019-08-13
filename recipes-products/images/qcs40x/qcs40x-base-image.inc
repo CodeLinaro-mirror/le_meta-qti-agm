@@ -6,5 +6,6 @@ IMAGE_INSTALL += "agmplugin"
 IMAGE_INSTALL += "agm-server"
 IMAGE_INSTALL += "agm-unit-test"
 IMAGE_INSTALL += "sndparser"
+IMAGE_INSTALL += "agm-plugin-test"
 IMAGE_INSTALL += "binder"
 
