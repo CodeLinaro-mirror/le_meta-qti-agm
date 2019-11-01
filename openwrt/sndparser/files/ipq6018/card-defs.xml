@@ -54,8 +54,8 @@
     </pcm-device>
 
     <pcm-device>
-        <id>101</id>
-        <name>PCM101</name>
+        <id>102</id>
+        <name>PCM102</name>
         <pcm_plugin>
             <so-name>libagm_pcm_plugin.so</so-name>
         </pcm_plugin>
