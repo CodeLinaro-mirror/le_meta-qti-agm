@@ -10,8 +10,14 @@ FILESPATH =+ "${WORKSPACE}/:"
 SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/test"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/test"
+
+do_install_append() {
+       install -d ${D}${sysconfdir}
+       install -m 0755 ${S}/*.xml ${D}${sysconfdir}/
+}
+
 PR = "r0"
-DEPENDS = "tinyalsa tinycompress sndparser platform-headers agm glib-2.0"
+DEPENDS = "tinyalsa tinycompress expat sndparser agm libcutils glib-2.0 acdbdata"
 
 EXTRA_OECONF += "--with-glib"
 EXTRA_OEMAKE += "DEFAULT_INCLUDES=-I${STAGING_KERNEL_BUILDDIR}/usr/include"
