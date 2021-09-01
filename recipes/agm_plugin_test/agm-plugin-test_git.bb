@@ -17,7 +17,7 @@ do_install_append() {
 }
 
 PR = "r0"
-DEPENDS = "tinyalsa tinycompress expat sndparser agm libcutils glib-2.0 acdbdata"
+DEPENDS = "tinycompress sndparser"
 
 EXTRA_OECONF += "--with-glib"
 EXTRA_OEMAKE += "DEFAULT_INCLUDES=-I${STAGING_KERNEL_BUILDDIR}/usr/include"
