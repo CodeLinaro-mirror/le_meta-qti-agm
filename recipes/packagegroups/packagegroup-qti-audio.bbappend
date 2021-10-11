@@ -4,5 +4,6 @@ LICENSE = "BSD-3-Clause"
 
 RDEPENDS_packagegroup-qti-audio += ' \
     agmplugin \
+    agm-plugin-test \
     agm \
 '
