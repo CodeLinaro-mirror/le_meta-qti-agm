@@ -8,17 +8,12 @@ ${LICENSE};md5=3775480a712fc46a69647678acb234cb"
 
 FILESPATH =+ "${WORKSPACE}/:"
 SRC_URI  = "file://vendor/qcom/opensource/agm/snd_parser"
-SRC_URI += "file://${BASEMACHINE}/"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/snd_parser"
-
-do_install_append() {
-       install -d ${D}${sysconfdir}
-       install -m 0755 ${WORKDIR}/${BASEMACHINE}/* ${D}${sysconfdir}/
-}
 
 PR = "r0"
 DEPENDS = "agm"
 EXTRA_OECONF += "--with-glib"
+EXTRA_OECONF += " --with-basemachine=${BASEMACHINE}"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
