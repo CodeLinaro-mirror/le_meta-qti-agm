@@ -11,7 +11,7 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/"
 PR = "r0"
-DEPENDS = "tinyalsa tinycompress agm sndparser acdbdata glib-2.0"
+DEPENDS = "tinyalsa tinycompress agm-client sndparser acdbdata glib-2.0"
 
 #eXTRA_OEMAKE = "DEFAULT_INCLUDES= CPPFLAGS="-I. -I${STAGING_KERNEL_DIR}/include/uapi""
 
