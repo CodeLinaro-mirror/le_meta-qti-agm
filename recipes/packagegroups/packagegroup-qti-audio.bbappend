@@ -6,4 +6,6 @@ RDEPENDS_packagegroup-qti-audio += ' \
     agmplugin \
     agm-plugin-test \
     agm \
+    agm-client \
+    agm-server \
 '
