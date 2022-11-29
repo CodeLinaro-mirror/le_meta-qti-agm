@@ -27,7 +27,7 @@
 <defs>
 <card>
     <id>100</id>
-    <name>ipq6018sndcard</name>
+    <name>sdxtavili2ssndc</name>
 
     <pcm-device>
         <id>100</id>
@@ -44,18 +44,6 @@
     <pcm-device>
         <id>101</id>
         <name>PCM101</name>
-        <pcm_plugin>
-            <so-name>libagm_pcm_plugin.so</so-name>
-        </pcm_plugin>
-        <props>
-            <playback>0</playback>
-            <capture>1</capture>
-        </props>
-    </pcm-device>
-
-    <pcm-device>
-        <id>102</id>
-        <name>PCM102</name>
         <pcm_plugin>
             <so-name>libagm_pcm_plugin.so</so-name>
         </pcm_plugin>
@@ -90,6 +78,19 @@
             <hostless>1</hostless>
         </props>
     </pcm-device>
+
+    <compress-device>
+        <id>105</id>
+        <name>COMPRESS105</name>
+        <compress_plugin>
+            <so-name>libagm_compress_plugin.so</so-name>
+        </compress_plugin>
+        <props>
+            <playback>1</playback>
+            <capture>0</capture>
+            <hostless>0</hostless>
+        </props>
+    </compress-device>
 
     <mixer>
         <id>1</id>
