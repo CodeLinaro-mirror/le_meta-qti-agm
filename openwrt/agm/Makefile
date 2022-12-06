@@ -13,7 +13,7 @@ define Package/agm
   CATEGORY:=AUDIO
   MAINTAINER:=QTI MM Audio
   TITLE:=AGM
-  DEPENDS:= +tinyalsa +glib2 +ar-gsl +acdbdata +acdb +ats +audio-utils +core-include
+  DEPENDS:= +tinyalsa +glib2 +ar-gsl +acdbdata +acdb +ats +audio-utils +core-include +audio-log-utils
 endef
 
 define Package/agm/description
