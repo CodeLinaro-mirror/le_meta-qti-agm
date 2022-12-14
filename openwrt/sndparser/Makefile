@@ -13,10 +13,10 @@ define Package/sndparser
   CATEGORY:=AUDIO
   MAINTAINER:=QTI MM Audio
   TITLE:=SNDPARSER
-  DEPENDS:= +glib2 +core-include
+  DEPENDS:= +glib2 +core-include +agm
 endef
 
-define Package/sndparserdescription
+define Package/sndparser/description
   SNDPARSER
 endef
 
