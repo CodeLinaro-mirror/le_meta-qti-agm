@@ -35,7 +35,7 @@ do_install_append () {
         install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants/
         ln -sf /etc/systemd/system/agm_server.service \
                           ${D}/etc/systemd/system/multi-user.target.wants/agm_server.service
-        install -m 0644 ${WORKDIR}/agm-dbus.conf -D ${D}${sysconfdir}/dbus-1/system.d/agm-dbus.conf
+        install -m 0644 ${WORKDIR}/${BASEMACHANE}/agm-dbus.conf -D ${D}${sysconfdir}/dbus-1/system.d/agm-dbus.conf
     else
         install -m 0755 ${S}/src/agm_server -D ${D}${sysconfdir}/init.d/agm_server
     fi
