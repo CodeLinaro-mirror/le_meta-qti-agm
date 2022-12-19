@@ -1,4 +1,4 @@
-RDEPENDS_packagegroup-qti-audio += ' \
+RDEPENDS:packagegroup-qti-audio += ' \
     agm \
     agmplugin \
     agm-plugin-test \
