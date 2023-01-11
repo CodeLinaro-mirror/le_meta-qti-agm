@@ -10,6 +10,7 @@ DEPENDS = "glib-2.0 libutils libcutils agm dbus"
 
 FILESPATH   =+ "${WORKSPACE}/:"
 SRC_URI     =  "file://vendor/qcom/opensource/agm/ipc/DBus/agm_server"
+SRC_URI     += "file://${BASEMACHINE}/"
 SRC_URI     += "file://agm_server.service"
 SRC_URI     += "file://agm-dbus.conf"
 S = "${WORKDIR}/vendor/qcom/opensource/agm/ipc/DBus/agm_server"
@@ -30,7 +31,7 @@ INITSCRIPT_PARAMS = "start 45 2 3 4 5 . stop 80 0 1 6 ."
 
 do_install_append () {
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
-        install -m 0644 ${WORKDIR}/agm_server.service -D ${D}${sysconfdir}/systemd/system/agm_server.service
+        install -m 0644 ${WORKDIR}/${BASEMACHINE}/agm_server.service -D ${D}${sysconfdir}/systemd/system/agm_server.service
         install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants/
         ln -sf /etc/systemd/system/agm_server.service \
                           ${D}/etc/systemd/system/multi-user.target.wants/agm_server.service
