@@ -13,7 +13,7 @@ define Package/sndparser
   CATEGORY:=AUDIO
   MAINTAINER:=QTI MM Audio
   TITLE:=SNDPARSER
-  DEPENDS:= +glib2 +core-include +agm
+  DEPENDS:= +glib2 +core-include +libexpat
 endef
 
 define Package/sndparser/description
@@ -26,12 +26,12 @@ CONFIGURE_ARGS += \
 TARGET_CFLAGS += \
 	-DFEATURE_IPQ_OPENWRT \
 	-I$(STAGING_DIR)/usr/include/ \
-	-I$(STAGING_DIR)/usr/include/glib-2.0/ \
-	-I$(STAGING_DIR)/usr/include/agm/
+	-I$(STAGING_DIR)/usr/include/glib-2.0/
 
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)/
 	$(CP) $(LOCAL_SRC)/* $(PKG_BUILD_DIR)/
+	$(CP) $(LOCAL_SRC)/../service/inc/* $(PKG_BUILD_DIR)/
 endef
 
 define Build/InstallDev
