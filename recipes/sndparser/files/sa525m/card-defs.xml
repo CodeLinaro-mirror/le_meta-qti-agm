@@ -1,4 +1,4 @@
-<!--  Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.-->
+<!--  Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.-->
 <!--  SPDX-License-Identifier: BSD-3-Clause-Clear                             -->
 <!--  Copyright (c) 2019, The Linux Foundation. All rights reserved.          -->
 <!--                                                                          -->
@@ -218,6 +218,19 @@
             <session_mode>2</session_mode>
         </props>
     </pcm-device>
+
+    <compress-device>
+        <id>115</id>
+        <name>COMPRESS115</name>
+        <compress_plugin>
+            <so-name>libagm_compress_plugin.so</so-name>
+        </compress_plugin>
+        <props>
+            <playback>1</playback>
+            <capture>0</capture>
+            <session_mode>2</session_mode>
+        </props>
+    </compress-device>
 
     <mixer>
         <id>1</id>
