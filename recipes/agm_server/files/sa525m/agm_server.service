@@ -3,12 +3,13 @@
 
 [Unit]
 Description=Agm Server Init
+SourcePath=/usr/bin/agm_server
 After=init_audio.service
 
 [Service]
 Type=dbus
-User=root
-Group=root
+User=audio
+Group=audio
 BusName=org.Qti.AgmService
 SystemdService=dbus-org.Qti.AgmService.service
 Restart=always
