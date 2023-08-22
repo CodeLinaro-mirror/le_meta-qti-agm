@@ -1,1 +1,1 @@
-QTIAGM:=agm agmplugin sndparser
+QTIAGM:=agm agmplugin sndparser agmplugintest
