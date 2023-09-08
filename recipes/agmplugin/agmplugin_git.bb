@@ -11,7 +11,8 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/"
 PR = "r0"
-DEPENDS = "tinyalsa tinycompress agm-client sndparser acdbdata glib-2.0"
+DEPENDS = "tinyalsa tinycompress sndparser acdbdata glib-2.0 audio-log-utils"
+DEPENDS += "${@bb.utils.contains('BASEMACHINE', 'sdxlemur', 'agm-sw-binder-client', 'agm-client', d)}"
 
 #eXTRA_OEMAKE = "DEFAULT_INCLUDES= CPPFLAGS="-I. -I${STAGING_KERNEL_DIR}/include/uapi""
 
