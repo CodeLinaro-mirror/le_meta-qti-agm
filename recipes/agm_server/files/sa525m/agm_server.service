@@ -4,6 +4,8 @@
 [Unit]
 Description=Agm Server Init
 After=init_audio.service
+StartLimitIntervalSec=0
+StartLimitBurst=10
 
 [Service]
 Type=dbus
@@ -11,7 +13,8 @@ User=root
 Group=root
 BusName=org.Qti.AgmService
 SystemdService=dbus-org.Qti.AgmService.service
-Restart=always
+Restart=on-failure
+RestartSec=1
 ExecStart=/usr/bin/agm_server -s
 ExecReload=/usr/bin/agm_server -r
 NotifyAccess=main
