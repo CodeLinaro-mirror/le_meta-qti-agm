@@ -14,7 +14,7 @@ PR = "r0"
 DEPENDS = "tinyalsa tinycompress sndparser agm glib-2.0 acdbdata"
 
 EXTRA_OECONF += "--with-glib"
-EXTRA_OEMAKE += "DEFAULT_INCLUDES=-I${STAGING_KERNEL_BUILDDIR}/usr/include"
+EXTRA_OEMAKE += "DEFAULT_INCLUDES=-I${STAGING_INCDIR}/linux-msm/usr/include"
 
 FILES_${PN}-dbg  = "${libdir}/.debug/*"
 FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
