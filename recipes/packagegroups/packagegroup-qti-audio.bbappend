@@ -6,6 +6,8 @@ RDEPENDS_packagegroup-qti-audio += ' \
     agmplugin \
     agm-plugin-test \
     agm \
-    agm-client \
-    agm-server \
+    ${@bb.utils.contains('BASEMACHINE', 'sdxlemur', 'agm-sw-binder-client', '', d)} \
+    ${@bb.utils.contains('BASEMACHINE', 'sdxlemur', 'agm-sw-binder-server', '', d)} \
+    ${@bb.utils.contains('BASEMACHINE', 'sa525m"', 'agm-client', '',  d)} \
+    ${@bb.utils.contains('BASEMACHINE', 'sa525m', 'agm-server', '', d)} \
 '

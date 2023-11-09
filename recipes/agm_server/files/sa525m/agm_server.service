@@ -3,14 +3,15 @@
 
 [Unit]
 Description=Agm Server Init
+SourcePath=/usr/bin/agm_server
 After=init_audio.service
 StartLimitIntervalSec=0
 StartLimitBurst=10
 
 [Service]
 Type=dbus
-User=root
-Group=root
+User=audio
+Group=audio
 BusName=org.Qti.AgmService
 SystemdService=dbus-org.Qti.AgmService.service
 Restart=on-failure

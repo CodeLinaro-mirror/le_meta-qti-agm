@@ -12,7 +12,7 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/service"
 S = "${WORKDIR}/vendor/qcom/opensource/agm/service"
 PR = "r0"
 
-DEPENDS = "tinyalsa ar-gsl ats acdbdata audio-log-utils"
+DEPENDS = "glib-2.0 tinyalsa ar-gsl ats acdbdata audio-log-utils"
 
 EXTRA_OECONF += "--with-glib"
 SOLIBS = ".so"
