@@ -12,7 +12,7 @@ define Package/agmplugintest
   CATEGORY:=AUDIO
   MAINTAINER:=QTI MM Audio
   TITLE:=AGMPLUGINTEST
-  DEPENDS:= +tinyalsa +tinycompress +agm
+  DEPENDS:= +tinyalsa +tinycompress +agm +capiv2-headers
 endef
 
 define Package/agmplugintest/description
