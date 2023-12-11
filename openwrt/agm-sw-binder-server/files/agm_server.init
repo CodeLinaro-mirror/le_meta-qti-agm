@@ -15,8 +15,14 @@ start_service() {
 	echo "Start agm_server:" > /dev/kmsg
 	procd_set_param command /usr/bin/agm_server
 	procd_set_param respawn
-	procd_set_param user root
-	procd_set_param group root
+	if [ -x /sbin/ujail -a -e /etc/capabilities/agm_server.json ]; then
+		echo "UJAIL capabilities set for  agm_server:" > /dev/kmsg
+		procd_set_param capabilities  /etc/capabilities/agm_server.json
+		procd_add_jail agm_server
+		procd_set_param user media
+		procd_set_param group media
+		procd_set_param no_new_privs 1
+	fi
 	procd_close_instance
 }
 
