@@ -12,6 +12,4 @@ EXTRA_OECONF += "--with-glib --with-syslog --with-agm-no-ipc"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
-RM_WORK_EXCLUDE += "${PN}"
-
 inherit autotools pkgconfig
