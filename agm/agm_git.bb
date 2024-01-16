@@ -7,7 +7,7 @@ FILESPATH =+ "${WORKSPACE}/:"
 SRC_URI = "file://audio/opensource/agm/ \
            file://0001-service-device-Add-support-of-new-channel-map.patch"
 S = "${WORKDIR}/audio/opensource/agm"
-DEPENDS = "glib-2.0 tinyalsa args mm-audio-headers expat"
+DEPENDS = "glib-2.0 tinyalsa tinycompress args mm-audio-headers expat"
 EXTRA_OECONF += "--with-glib --with-syslog --with-agm-no-ipc"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
