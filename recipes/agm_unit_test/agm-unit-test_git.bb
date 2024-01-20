@@ -17,6 +17,6 @@ DEPENDS = "agm agm-client"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/service/test"
 
-FILES_${PN}-dbg  = "${libdir}/.debug/*"
-FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
-FILES_${PN}-dev  = "${libdir}/*.la ${includedir}"
+FILES:${PN}-dbg  = "${libdir}/.debug/*"
+FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
+FILES:${PN}-dev  = "${libdir}/*.la ${includedir}"
