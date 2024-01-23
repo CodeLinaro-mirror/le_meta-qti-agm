@@ -12,7 +12,7 @@ define Package/agmplugin
   CATEGORY:=AUDIO
   MAINTAINER:=QTI MM Audio
   TITLE:=AGMPLUGIN
-  DEPENDS:= +tinyalsa +tinycompress +glib2 +agm +sndparser +audio-log-utils
+  DEPENDS:= +tinyalsa +tinycompress +glib2 +agm +sndparser +audio-log-utils +agm-sw-binder-client
 endef
 
 define Package/agmplugin/description
