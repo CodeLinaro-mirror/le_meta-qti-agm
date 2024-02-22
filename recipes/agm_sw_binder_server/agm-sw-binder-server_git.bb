@@ -2,8 +2,9 @@ inherit autotools pkgconfig update-rc.d qprebuilt
 
 DESCRIPTION = "agm sw binder server"
 SECTION = "multimedia"
-LICENSE = "BSD-3-Clause-Clear"
-LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/BSD;md5=3775480a712fc46a69647678acb234cb"
+LICENSE = "BSD-3-Clause"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/\
+${LICENSE};md5=550794465ba0ec5312d6919e203a55f9"
 
 PR = "r0"
 
@@ -19,14 +20,14 @@ FILES_SOLIBSDEV = ""
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/ipc/SwBinders/agm_server/"
 
-FILES_${PN}-dbg  = "${libdir}/.debug/*"
-FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
-FILES_${PN}-dev  = "${libdir}/*.la ${includedir}"
+FILES:${PN}-dbg  = "${libdir}/.debug/*"
+FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
+FILES:${PN}-dev  = "${libdir}/*.la ${includedir}"
 
 INITSCRIPT_NAME = "agmserver"
 INITSCRIPT_PARAMS = "start 25 2 3 4 5 . stop 74 0 1 6 ."
 
-do_install_append () {
+do_install:append () {
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
         install -m 0644 ${WORKDIR}/${BASEMACHINE}/agm_binder_server.service -D ${D}${sysconfdir}/systemd/system/agm_binder_server.service
         install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants/
