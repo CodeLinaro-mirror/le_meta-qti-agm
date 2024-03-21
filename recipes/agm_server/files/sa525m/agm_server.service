@@ -5,6 +5,7 @@
 Description=Agm Server Init
 SourcePath=/usr/bin/agm_server
 After=init_audio.service
+Requires=init_audio.service
 StartLimitIntervalSec=0
 StartLimitBurst=10
 
