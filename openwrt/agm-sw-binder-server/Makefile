@@ -2,6 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=agm-sw-binder-server
 PKG_RELEASE:=1
+PKG_LICENSE:=BSD-3-Clause
 PKG_FIXUP:=autoreconf
 
 LOCAL_SRC ?= $(TOPDIR)/src/vendor/qcom/opensource/agm/ipc/SwBinders/agm_server/
