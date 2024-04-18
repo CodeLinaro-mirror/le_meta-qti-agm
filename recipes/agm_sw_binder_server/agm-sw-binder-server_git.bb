@@ -28,7 +28,7 @@ INITSCRIPT_PARAMS = "start 25 2 3 4 5 . stop 74 0 1 6 ."
 
 do_install_append () {
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
-        install -m 0644 ${WORKDIR}/agm_binder_server.service -D ${D}${sysconfdir}/systemd/system/agm_binder_server.service
+        install -m 0644 ${WORKDIR}/${BASEMACHINE}/agm_binder_server.service -D ${D}${sysconfdir}/systemd/system/agm_binder_server.service
         install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants/
         ln -sf /etc/systemd/system/agm_binder_server.service \
             ${D}/etc/systemd/system/multi-user.target.wants/agm_binder_server.service

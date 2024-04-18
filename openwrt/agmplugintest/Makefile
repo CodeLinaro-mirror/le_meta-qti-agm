@@ -2,6 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=agmplugintest
 PKG_RELEASE:=1
+PKG_LICENSE:=BSD-3-Clause
 PKG_FIXUP:=autoreconf
 
 LOCAL_SRC ?= $(TOPDIR)/src/vendor/qcom/opensource/agm/plugins/tinyalsa/test
