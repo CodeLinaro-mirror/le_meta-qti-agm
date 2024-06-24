@@ -2,8 +2,9 @@ inherit autotools pkgconfig
 
 DESCRIPTION = "agm sw binder client"
 SECTION = "multimedia"
-LICENSE = "BSD-3-Clause-Clear"
-LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/BSD;md5=3775480a712fc46a69647678acb234cb"
+LICENSE = "BSD-3-Clause"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/\
+${LICENSE};md5=550794465ba0ec5312d6919e203a55f9"
 
 PR = "r0"
 
@@ -19,8 +20,8 @@ SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/ipc/SwBinders/agm_client/"
-FILES_${PN}-dbg  = "${libdir}/.debug/*"
-FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
-FILES_${PN}-dev  = "${libdir}/*.la ${includedir}"
+FILES:${PN}-dbg  = "${libdir}/.debug/*"
+FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
+FILES:${PN}-dev  = "${libdir}/*.la ${includedir}"
 
 RM_WORK_EXCLUDE += "${PN}"
