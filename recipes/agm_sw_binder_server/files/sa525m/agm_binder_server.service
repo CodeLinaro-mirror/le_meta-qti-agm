@@ -13,7 +13,7 @@ StartLimitBurst=10
 [Service]
 User=audio
 Group=audio
-SupplementaryGroups=binderfs logd
+SupplementaryGroups=binder logd
 Restart=on-failure
 ExecStart=/usr/bin/agm_server -s
 
