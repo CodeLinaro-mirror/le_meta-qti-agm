@@ -14,7 +14,7 @@ S = "${WORKDIR}/vendor/qcom/opensource/agm/snd_parser"
 
 do_install:append() {
        install -d ${D}${sysconfdir}
-       install -m 0755 ${WORKDIR}/${BASEMACHINE}/* ${D}${sysconfdir}/
+       install -m 0664 ${WORKDIR}/${BASEMACHINE}/* ${D}${sysconfdir}/
 }
 
 PR = "r0"
