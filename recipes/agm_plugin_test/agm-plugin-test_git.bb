@@ -11,7 +11,7 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/test"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/test"
 
-do_install_append() {
+do_install:append() {
        install -d ${D}${sysconfdir}
        install -m 0755 ${S}/*.xml ${D}${sysconfdir}/
 }
@@ -22,6 +22,6 @@ DEPENDS = "tinycompress sndparser"
 EXTRA_OECONF += "--with-glib"
 EXTRA_OEMAKE += "DEFAULT_INCLUDES=-I${STAGING_KERNEL_BUILDDIR}/usr/include"
 
-FILES_${PN}-dbg  = "${libdir}/.debug/*"
-FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
-FILES_${PN}-dev  = "${libdir}/*.la ${includedir}"
+FILES:${PN}-dbg  = "${libdir}/.debug/*"
+FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
+FILES:${PN}-dev  = "${libdir}/*.la ${includedir}"
