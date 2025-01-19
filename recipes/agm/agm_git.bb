@@ -7,16 +7,16 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/BSD-3-Clause;m
                     file://${COREBASE}/meta/files/common-licenses/BSD-3-Clause-Clear;md5=7a434440b651f4a472ca93716d01033a"
 
 FILESPATH =+ "${WORKSPACE}/:"
-SRC_URI  = "file://vendor/qcom/opensource/agm/service"
+SRC_URI  = "file://vendor/qcom/opensource/agm"
 
-S = "${WORKDIR}/vendor/qcom/opensource/agm/service"
+S = "${WORKDIR}/vendor/qcom/opensource/agm"
 PR = "r0"
 
-DEPENDS = "glib-2.0 tinyalsa ats acdbdata spf mm-audio-headers expat audio-log-utils"
-RM_WORK_EXCLUDE += "${PN}"
+DEPENDS = "glib-2.0 tinycompress tinyalsa ats acdbdata spf mm-audio-headers expat audio-log-utils"
 
 TARGET_CFLAGS += "-I${STAGING_INCDIR}/spf"
 
 EXTRA_OECONF += "--with-glib"
+EXTRA_OECONF += "--without-syslog --with-agm-no-ipc"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
