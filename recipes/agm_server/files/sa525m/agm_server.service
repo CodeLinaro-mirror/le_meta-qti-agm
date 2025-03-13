@@ -1,12 +1,12 @@
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 [Unit]
 Description=Agm Server Init
 SourcePath=/usr/bin/agm_server
-Requires=init_audio.service
+Requires=init_audio.service dbus.service
 BindsTo=dev-aud_pasthru_modem.device
-After=init_audio.service dev-aud_pasthru_modem.device
+After=init_audio.service dev-aud_pasthru_modem.device dbus.service
 
 [Service]
 Type=dbus
