@@ -1,6 +1,6 @@
 SUMMARY = "AGM for AROSP"
 LICENSE = "BSD-3-Clause"
-LIC_FILES_CHKSUM += "file://service/src/agm.c;beginline=30;endline=31;md5=0f37b80cb1f8d808a27cca9f0cb5e0ac \
+LIC_FILES_CHKSUM += "file://service/src/agm.c;beginline=30;endline=31;md5=e733afaf233fbcbc22769d0a9bda0b3e \
                      file://service/inc/public/agm/agm_api.h;beginline=31;endline=32;md5=2eeb25220b858bebc66a98390f40229e"
 
 FILESPATH =+ "${WORKSPACE}/:"
