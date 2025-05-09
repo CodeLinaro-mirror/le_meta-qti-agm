@@ -1,7 +1,6 @@
 SUMMARY = "AGM for AROSP"
 LICENSE = "BSD-3-Clause"
-LIC_FILES_CHKSUM += "file://service/src/agm.c;beginline=30;endline=31;md5=0f37b80cb1f8d808a27cca9f0cb5e0ac \
-                     file://service/inc/public/agm/agm_api.h;beginline=31;endline=32;md5=2eeb25220b858bebc66a98390f40229e"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/${LICENSE};md5=550794465ba0ec5312d6919e203a55f9"
 
 FILESPATH =+ "${WORKSPACE}/:"
 SRC_URI = "file://vendor/qcom/opensource/agm/ \
@@ -9,6 +8,8 @@ SRC_URI = "file://vendor/qcom/opensource/agm/ \
 S = "${WORKDIR}/vendor/qcom/opensource/agm"
 DEPENDS = "glib-2.0 tinyalsa tinycompress args mm-audio-headers expat"
 EXTRA_OECONF += "--with-glib --without-syslog --with-agm-no-ipc"
+EXTRA_OECONF += "--with-basemachine=${BASEMACHINE}"
+CFLAGS:append:sun = " -Wno-error=incompatible-pointer-types"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
