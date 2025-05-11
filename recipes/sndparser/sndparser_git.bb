@@ -17,6 +17,11 @@ do_install:append() {
        install -m 0755 ${WORKDIR}/${BASEMACHINE}/* ${D}${sysconfdir}/
 }
 
+do_install:append:qcm4325-mtp() {
+       install -d ${D}${sysconfdir}
+       install -m 0755 ${WORKDIR}/qcm2290-mtp/* ${D}${sysconfdir}/
+}
+
 PR = "r0"
 DEPENDS = "agm"
 EXTRA_OECONF += "--with-glib"
