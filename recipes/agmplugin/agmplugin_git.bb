@@ -11,7 +11,7 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/"
 
 S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/"
 PR = "r0"
-DEPENDS = "tinyalsa tinycompress agm sndparser"
+DEPENDS = "tinyalsa tinycompress agm-ls-fe sndparser"
 
 FILES:${PN}-dbg  = "${libdir}/.debug/*"
 FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
