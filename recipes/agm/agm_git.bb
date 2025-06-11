@@ -9,7 +9,6 @@ S = "${WORKDIR}/vendor/qcom/opensource/agm"
 DEPENDS = "glib-2.0 tinyalsa tinycompress args mm-audio-headers expat"
 EXTRA_OECONF += "--with-glib --without-syslog --with-agm-no-ipc"
 EXTRA_OECONF += "--with-basemachine=${BASEMACHINE}"
-CFLAGS:append:sun = " -Wno-error=incompatible-pointer-types"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
