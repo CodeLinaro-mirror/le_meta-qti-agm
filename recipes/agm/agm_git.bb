@@ -18,5 +18,6 @@ TARGET_CFLAGS += "-I${STAGING_INCDIR}/spf"
 
 EXTRA_OECONF += "--with-glib"
 EXTRA_OECONF += "--without-syslog --with-agm-no-ipc"
+EXTRA_OECONF += "${@'--with-32bit=yes' if d.getVar('PN').startswith('lib32-') else '--with-32bit=no'}"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
