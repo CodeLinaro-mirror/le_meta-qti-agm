@@ -15,6 +15,7 @@ User=audio
 Group=audio
 SupplementaryGroups=binder logd
 Restart=on-failure
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 ExecStartPre=+/bin/chown audio:audio /dev/dma_heap/qcom,audio
 ExecStartPre=+/bin/chmod 0660 /dev/dma_heap/qcom,audio
 ExecStart=/usr/bin/agm_server -s
