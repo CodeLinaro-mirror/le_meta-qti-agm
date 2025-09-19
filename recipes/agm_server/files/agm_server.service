@@ -1,0 +1,15 @@
+# Based on the user unit
+
+[Unit]
+Description=AGM Server Service
+After=init_audio.service adbd.service pdmapper.service servicemanager.service
+
+[Service]
+User=audio
+Group=audio
+Type=simple
+ExecStart=/usr/bin/agm_server --system -vvvv
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
