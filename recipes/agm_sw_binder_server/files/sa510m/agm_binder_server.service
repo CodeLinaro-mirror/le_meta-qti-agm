@@ -15,6 +15,7 @@ User=audio
 Group=audio
 SupplementaryGroups=binder logd
 Restart=on-failure
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 ExecStart=/usr/bin/agm_server -s
 
 [Install]
