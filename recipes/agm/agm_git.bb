@@ -7,7 +7,7 @@ SRC_URI = "file://vendor/qcom/opensource/agm/ \
            file://0001-service-device-Add-support-of-new-channel-map.patch"
 S = "${WORKDIR}/vendor/qcom/opensource/agm"
 DEPENDS = "glib-2.0 tinyalsa tinycompress args mm-audio-headers expat"
-EXTRA_OECONF += "--with-glib --without-syslog --with-agm-no-ipc"
+EXTRA_OECONF += "--with-glib --without-syslog"
 EXTRA_OECONF += "--with-basemachine=${BASEMACHINE}"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
