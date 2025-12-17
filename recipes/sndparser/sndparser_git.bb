@@ -1,6 +1,7 @@
 inherit autotools pkgconfig
 
-DESCRIPTION = "sndparser"
+DESCRIPTION = "Sound card configuration parser for Audio Graph Manager (AGM),
+generating PCM and route definitions"
 SECTION = "multimedia"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/\

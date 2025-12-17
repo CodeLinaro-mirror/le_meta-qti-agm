@@ -1,6 +1,6 @@
 inherit autotools pkgconfig
 
-DESCRIPTION = "agmplugin"
+DESCRIPTION = "The AGM TinyALSA plugin provides audio routing and stream handling."
 SECTION = "multimedia"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/\

@@ -1,6 +1,6 @@
 inherit autotools pkgconfig
 
-DESCRIPTION = "agmtest"
+DESCRIPTION = "AGM plugin test applications for validating audio routing and session management"
 SECTION = "multimedia"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/\
