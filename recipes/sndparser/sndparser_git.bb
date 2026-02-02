@@ -17,6 +17,9 @@ do_install:append() {
        install -m 0664 ${WORKDIR}/${BASEMACHINE}/* ${D}${sysconfdir}/
 }
 
+PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,--without-dltlogging,dlt-daemon"
+
 PR = "r0"
 DEPENDS = "libcutils expat glib-2.0 agm"
 EXTRA_OECONF += "--with-glib"

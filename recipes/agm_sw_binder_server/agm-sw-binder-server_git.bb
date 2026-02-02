@@ -38,4 +38,7 @@ do_install:append () {
     fi
 }
 
+PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,--without-dltlogging,dlt-daemon"
+
 RM_WORK_EXCLUDE += "${PN}"
