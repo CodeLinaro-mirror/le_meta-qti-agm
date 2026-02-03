@@ -1,6 +1,6 @@
 inherit autotools pkgconfig
 
-DESCRIPTION = "Audio Graph Manager (AGM) userspace service and library for audio routing and
+DESCRIPTION = "Audio Graph Manager (AGM) userspace service and library for audio routing and\
 session management"
 SECTION = "multimedia"
 LICENSE = "BSD-3-Clause"

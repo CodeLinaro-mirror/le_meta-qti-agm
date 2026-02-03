@@ -1,6 +1,6 @@
 inherit autotools pkgconfig
 
-DESCRIPTION = "Sound card configuration parser for Audio Graph Manager (AGM),
+DESCRIPTION = "Sound card configuration parser for Audio Graph Manager (AGM),\
 generating PCM and route definitions"
 SECTION = "multimedia"
 LICENSE = "BSD-3-Clause"
