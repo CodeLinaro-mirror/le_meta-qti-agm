@@ -12,8 +12,10 @@ SRC_URI  = "file://vendor/qcom/opensource/agm/service"
 S = "${WORKDIR}/vendor/qcom/opensource/agm/service"
 PR = "r0"
 
-DEPENDS = "tinyalsa ats acdbdata audio-log-utils"
+DEPENDS = "tinyalsa ats mm-audio-headers audio-log-utils"
 
 EXTRA_OECONF += "--with-glib"
+EXTRA_OECONF += "--enable-card-state-unsupported"
+
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
