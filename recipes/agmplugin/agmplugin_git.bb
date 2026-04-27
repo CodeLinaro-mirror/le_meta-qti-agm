@@ -14,6 +14,7 @@ PR = "r0"
 DEPENDS = "tinyalsa tinycompress agm sndparser"
 
 EXTRA_OEMAKE = "DEFAULT_INCLUDES=-I${STAGING_KERNEL_BUILDDIR}/usr/include"
+EXTRA_OECONF += "--with-agm-no-ipc"
 
 FILES:${PN}-dbg  = "${libdir}/.debug/*"
 FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
