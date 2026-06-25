@@ -14,7 +14,7 @@ PR = "r0"
 
 DEPENDS = "glib-2.0 tinyalsa ar-gsl ats acdbdata audio-log-utils"
 PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
-PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,--without-dltlogging,dlt-daemon"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,,dlt-daemon"
 
 EXTRA_OECONF += "--with-glib"
 SOLIBS = ".so"
