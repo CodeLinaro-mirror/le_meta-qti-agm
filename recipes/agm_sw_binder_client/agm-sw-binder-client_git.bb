@@ -25,6 +25,6 @@ FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pk
 FILES:${PN}-dev  = "${libdir}/*.la ${includedir}"
 
 PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
-PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,--without-dltlogging,dlt-daemon"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,,dlt-daemon"
 
 RM_WORK_EXCLUDE += "${PN}"

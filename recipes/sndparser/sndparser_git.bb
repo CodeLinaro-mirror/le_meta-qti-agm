@@ -18,7 +18,7 @@ do_install:append() {
 }
 
 PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
-PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,--without-dltlogging,dlt-daemon"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,,dlt-daemon"
 
 PR = "r0"
 DEPENDS = "libcutils expat glib-2.0 agm"

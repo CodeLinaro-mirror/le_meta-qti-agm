@@ -30,6 +30,14 @@ INITSCRIPT_PARAMS = "start 25 2 3 4 5 . stop 74 0 1 6 ."
 do_install:append () {
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
         install -m 0644 ${WORKDIR}/${BASEMACHINE}/agm_binder_server.service -D ${D}${sysconfdir}/systemd/system/agm_binder_server.service
+        if ${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'true', 'false', d)}; then
+            if grep -q '^SupplementaryGroups=' ${D}${sysconfdir}/systemd/system/agm_binder_server.service; then
+                grep -q '^SupplementaryGroups=.*dlt' ${D}${sysconfdir}/systemd/system/agm_binder_server.service || \
+                    sed -i 's/^\(SupplementaryGroups=.*\)/\1 dlt/' ${D}${sysconfdir}/systemd/system/agm_binder_server.service
+            else
+                sed -i '/^Group=/a SupplementaryGroups=dlt' ${D}${sysconfdir}/systemd/system/agm_binder_server.service
+            fi
+        fi
         install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants/
         ln -sf /etc/systemd/system/agm_binder_server.service \
             ${D}/etc/systemd/system/multi-user.target.wants/agm_binder_server.service
@@ -39,6 +47,6 @@ do_install:append () {
 }
 
 PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
-PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,--without-dltlogging,dlt-daemon"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,,dlt-daemon"
 
 RM_WORK_EXCLUDE += "${PN}"
