@@ -15,7 +15,7 @@ SRC_URI     =  "file://vendor/qcom/opensource/agm/service/test"
 
 DEPENDS = "agm agm-client"
 
-S = "${WORKDIR}/vendor/qcom/opensource/agm/service/test"
+S = "${UNPACKDIR}/vendor/qcom/opensource/agm/service/test"
 
 FILES_${PN}-dbg  = "${libdir}/.debug/*"
 FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"

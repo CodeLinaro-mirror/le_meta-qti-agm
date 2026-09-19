@@ -9,7 +9,7 @@ ${LICENSE};md5=fe8b41221d7524c70688f7d059ff6d87"
 FILESPATH =+ "${WORKSPACE}/:"
 SRC_URI  = "file://vendor/qcom/opensource/agm/plugins/tinyalsa/test/"
 
-S = "${WORKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/test/"
+S = "${UNPACKDIR}/vendor/qcom/opensource/agm/plugins/tinyalsa/test/"
 
 PR = "r0"
 DEPENDS = "tinycompress sndparser"

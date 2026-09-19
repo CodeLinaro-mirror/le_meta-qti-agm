@@ -15,7 +15,7 @@ SRC_URI    =   "file://vendor/qcom/opensource/agm/ipc/agm_client/"
 
 DEPENDS = "libutils libcutils binder agm-server liblog"
 
-S = "${WORKDIR}/vendor/qcom/opensource/agm/ipc/agm_client/"
+S = "${UNPACKDIR}/vendor/qcom/opensource/agm/ipc/agm_client/"
 
 FILES_${PN}-dbg  = "${libdir}/.debug/*"
 FILES_${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/*"
