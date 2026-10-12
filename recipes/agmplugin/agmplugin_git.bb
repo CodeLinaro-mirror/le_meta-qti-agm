@@ -24,5 +24,10 @@ FILES:${PN}-dbg  = "${libdir}/.debug/*"
 FILES:${PN}      = "${libdir}/*.so ${libdir}/*.so.* ${sysconfdir}/* ${libdir}/pkgconfig/* ${bindir}/* ${sbindir}/*"
 FILES:${PN}-dev  = "${libdir}/*.la ${includedir}"
 
+# This is appended to enable commonlog (CLOG) logging feature
+PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'commonlog', 'clog_logging_enabled', '', d)}"
+
+# This is appended to enable dlt-logging feature
 PACKAGECONFIG += "${@bb.utils.contains('MACHINE_FEATURES', 'dlt-logging', 'dlt_logging_enabled', '', d)}"
-PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging,,dlt-daemon"
+PACKAGECONFIG[clog_logging_enabled] = "--with-clog, ,commonlog-lib,commonlog-lib"
+PACKAGECONFIG[dlt_logging_enabled] = "--with-dltlogging, ,dlt-daemon,dlt-daemon"
